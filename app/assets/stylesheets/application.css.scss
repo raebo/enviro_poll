@@ -14,24 +14,28 @@
  *= require_tree .
  */
 
- .navbar {
-   border-color: #B0E04A;
-   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
-   font-size: 2.5em;
-   color: #1e1e1e;
-   text-align: center;
+.navbar 
+{
+  border-color: #B0E04A;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 2.5em;
+  color: #1e1e1e;
+  text-align: center;
 
-  img {
-    float: left;
+  img
+  {
+   float: left;
   }
- }
+}
 
-html {
+html
+{
   position: relative;
   min-height: 100%;
 }
 
-#footer {
+#footer
+{
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -43,10 +47,21 @@ html {
   padding: 5px;
 }
 
-#main {
-    padding-top: 50px;
-    padding-left: 30px;
-    padding-right: 30px;
-    padding-bottom: 30px;
-    background: white;
- }
+#main
+{
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 75px;
+  background: white;
+}
+
+.linkgrey
+{
+  color: #1e1e1e;
+}
+
+a.colored {
+   color: #B0E04A;
+   text-decoration: underline;
+}
