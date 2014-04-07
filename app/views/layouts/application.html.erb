@@ -23,7 +23,6 @@
 
   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div id="header">
-      <!-- <%= image_tag("logo.png") %> -->
       <%= @page_title || "EnviroPoll" %>
     </div>
   </div>
@@ -35,9 +34,9 @@
   <div id="footer">
     © 2014 Siimbyant UG
     <span class="pull-right visible-desktop">
-      <a href="dashboard_index_path" class="colored"><span class="linkgrey">Start</span></a>
+      <%= link_to "Start", root_path, class: "greylink" %>
       |
-      <a href="impressum_index_path" class="colored"><span class="linkgrey">Impressum</span></a>
+      <%= link_to "Impressum", impressum_index_path, class: "greylink" %>
     </span>
   </div>
 

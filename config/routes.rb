@@ -7,12 +7,6 @@ EnviroPoll::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'dashboard#index'
 
-  get '/impressum_index_path' => 'impressum#index'
-
-  get '/dashboard_index_path' => 'dashboard#index'
-
-  get '/registration_index_path' => 'registration#index'
-
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

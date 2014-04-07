@@ -16,6 +16,7 @@
 
 .navbar 
 {
+  padding: 15px;
   border-color: #B0E04A;
   font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
   font-size: 2.5em;
@@ -56,12 +57,22 @@ html
   background: white;
 }
 
-.linkgrey
+.greylink
 {
-  color: #1e1e1e;
+   color: #1e1e1e;
+   text-decoration: underline;
 }
 
-a.colored {
-   color: #B0E04A;
-   text-decoration: underline;
+.greylink:hover
+{
+  color: #1e1e1e;
+  background-color: #B0E04A;
+}
+
+h1
+{ 
+  color:#1e1e1e;
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 2em;
+  font-weight: bold;
 }
