@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe RegistrationController do
+describe RegistrationsController do
 
   describe "GET 'index'" do
     it "returns http success" do

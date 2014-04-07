@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140401093228) do
   end
 
   create_table "organisations", force: true do |t|
-    t.string   "organsation_name"
+    t.string   "organisation_name"
     t.string   "organisation_street"
     t.string   "organisation_street_number"
     t.string   "organisation_zipcode"
