@@ -52,8 +52,8 @@
           </div>
           <div class="panel-body">
             <div class="form-group">
-              <%= f.label :user_form_of_address, "Anrede" -%>
-              <%= f.text_field :user_form_of_address, class: 'form-control' -%>
+              <%= f.label :user_form_of_address, "Anrede" -%><br />
+              <%= f.select :user_form_of_address, Organisation::FORMS_OF_ADDRESS, {}, {class: "decorated form-control"} %>
             </div>
             <div class="form-group">
               <%= f.label :user_title, "Titel" -%>
@@ -69,11 +69,13 @@
             </div>
             <div class="form-group">
               <%= f.label :user_birthday, "Geburtsdatum" -%>
-              <%= f.text_field :user_birthday, class: 'form-control' -%>
+              <%= f.date_field :user_birthday, class: 'form-control' -%>
+              <!-- date_field does not work -->
             </div>
             <div class="form-group">
               <%= f.label :user_phone, "Telefon" -%>
-              <%= f.text_field :user_phone, class: 'form-control' -%>
+              <%= f.telephone_field :user_phone, class: 'form-control' -%>
+              <!-- telephone_field does not work -->
             </div>
             <div class="form-group">
               <%= f.label :user_fax, "Fax" -%>
@@ -81,7 +83,8 @@
             </div>
             <div class="form-group">
               <%= f.label :user_email, "E-Mail-Adresse" -%>
-              <%= f.text_field :user_email, class: 'form-control' -%>
+              <%= f.email_field :user_email, class: 'form-control' -%>
+              <!-- email_field does work - why does email work but date and telephone does not?-->
             </div>
           </div>
         </div>
@@ -89,7 +92,7 @@
     </tr>
   </table>
   <span class="pull-right visible-desktop">
-  <!-- hier folgt link zu nace code -->
+  <!-- link to nace code -->
     <%= f.submit t('.submit_create'), class: 'btn btn-default' -%>
   </span>
 <% end -%>

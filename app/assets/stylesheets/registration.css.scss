@@ -58,4 +58,25 @@ td
 {
   background-color: #FFFFFF;
   color: #F80000;
+  width: 100%;
+}
+
+.form-group select
+{
+  width: 100px;
+}
+
+select option
+{
+  background: #FFFFFF;
+}
+
+select.decorated option:hover
+{
+  box-shadow: 0 0 10px 100px #B0E04A inset;
+}
+
+select option:checked
+{
+  box-shadow: 0 0 10px 100px #B0E04A inset;
 }
