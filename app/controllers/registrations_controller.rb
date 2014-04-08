@@ -1,7 +1,7 @@
 class RegistrationsController < ApplicationController
   def new
     @organisation = Organisation.new
-    @organisation.organisation_name = 'Siimbyant'
+    #@organisation.organisation_name = 'Siimbyant'
   end
 
   def create
