@@ -1,11 +1,11 @@
-<h1>Registrierung</h1>
-<p>Bevor Sie die Umfrage starten müssen Sie noch einige Angaben zu Ihrer Organisation und einem Ansprechpartner machen.</p>
+<h1><%= t('.registration') %></h1>
+<p><%= t('.registration_instruction') %></p>
 
 <%= form_for @organisation, url: registrations_path, html: {class: 'form-horizontal', role: 'form'} do |f| -%>
 
   <% if @organisation.errors.any? %>
     <div class="alert alert-danger">
-      Bitte überprüfen Sie die rot markierten Felder.
+      <%= t('.alert') %>
     </div>
   <% end %>
 
@@ -14,32 +14,33 @@
       <td>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Angaben zur Organisation</h3>
+            <h3 class="panel-title"><%= t('.organisation_head') %></h3>
           </div>
           <div class="panel-body">
             <div class="form-group">
-              <%= f.label :organisation_name, "Name der Organisation" -%>
+              <%= f.label :organisation_name, t('.organisation_name') -%>
               <%= f.text_field :organisation_name, class: 'form-control' -%>
             </div>
             <div class="form-group">
               <label>Standort</label><br/>
-              <%= f.label :organisation_street, "Straße" -%>
+              <%= f.label :organisation_street, t('.organisation_street') -%>
               <%= f.text_field :organisation_street, class: 'form-control' -%>
             </div>
             <div class="form-group">
-              <%= f.label :organisation_street_number, "Hausnummer" -%>
+              <%= f.label :organisation_street_number, t('.organisation_street_number') -%>
               <%= f.text_field :organisation_street_number, class: 'form-control' -%>
+              <!-- Strasse und Hausnummer eventuell zusammen in ein Feld eintragen -->
             </div>
             <div class="form-group">
-              <%= f.label :organisation_zipcode, "Postleitzahl" -%>
+              <%= f.label :organisation_zipcode, t('.organisation_zipcode') -%>
               <%= f.text_field :organisation_zipcode, class: 'form-control' -%>
             </div>
             <div class="form-group">
-              <%= f.label :organisation_city, "Stadt" -%>
+              <%= f.label :organisation_city, t('.organisation_city') -%>
               <%= f.text_field :organisation_city, class: 'form-control' -%>
             </div>
             <div class="form-group">
-              <%= f.label :organisation_country, "Land" -%>
+              <%= f.label :organisation_country, t('.organisation_country') -%>
               <%= f.select :organisation_country, Organisation::COUNTRIES, {prompt: "Bitte auswählen..."},
               {class: "decorated form-control"} %>
             </div>
@@ -49,44 +50,44 @@
       <td>
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">Angaben zum Ansprechpartner</h3>
+            <h3 class="panel-title"><%= t('.person_head') %></h3>
           </div>
           <div class="panel-body">
             <div class="form-group">
-              <%= f.label :user_form_of_address, "Anrede" -%>
+              <%= f.label :user_form_of_address, t('.user_form_of_address') -%>
               <%= f.select :user_form_of_address, Organisation::FORMS_OF_ADDRESS, {prompt: "Bitte auswählen..."},
               {class: "decorated form-control"} %>
             </div>
             <div class="form-group">
-              <%= f.label :user_title, "Titel" -%>
+              <%= f.label :user_title, t('.user_title') -%>
               <%= f.text_field :user_title, class: 'form-control' -%>
             </div>
             <div class="form-group">
-              <%= f.label :user_first_name, "Vorname" -%>
+              <%= f.label :user_first_name, t('.user_first_name') -%>
               <%= f.text_field :user_first_name, class: 'form-control' -%>
             </div>
             <div class="form-group">
-              <%= f.label :user_last_name, "Nachname" -%>
+              <%= f.label :user_last_name, t('.user_last_name') -%>
               <%= f.text_field :user_last_name, class: 'form-control' -%>
             </div>
             <div class="form-group">
-              <%= f.label :user_birthday, "Geburtsdatum" -%>
+              <%= f.label :user_birthday, t('.user_birthday') -%>
               <%= f.text_field :user_birthday, class: 'form-control' -%>
-              <!-- date_field does not work -->
+              <!-- date_field nutzen oder eigene validierung?-->
             </div>
             <div class="form-group">
-              <%= f.label :user_phone, "Telefon" -%>
+              <%= f.label :user_phone, t('.user_phone') -%>
               <%= f.text_field :user_phone, class: 'form-control' -%>
-              <!-- telephone_field does not work -->
+              <!-- telephone_field nutzen oder eigene validierung? -->
             </div>
             <div class="form-group">
-              <%= f.label :user_fax, "Fax" -%>
+              <%= f.label :user_fax, t('.user_fax') -%>
               <%= f.text_field :user_fax, class: 'form-control' -%>
             </div>
             <div class="form-group">
-              <%= f.label :user_email, "E-Mail-Adresse" -%>
+              <%= f.label :user_email, t('.user_email') -%>
               <%= f.email_field :user_email, class: 'form-control' -%>
-              <!-- email_field does work - why does email work but date and telephone does not?-->
+              <!-- email_field nutzen oder eigene validierung? -->
             </div>
           </div>
         </div>
@@ -98,7 +99,3 @@
     <%= f.submit t('.submit_create'), class: 'btn btn-default' -%>
   </span>
 <% end -%>
-
-
-
-

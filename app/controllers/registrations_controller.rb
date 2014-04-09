@@ -10,8 +10,7 @@ class RegistrationsController < ApplicationController
 
     if @organisation.save
       flash[:notice] = t('.fn_created')
-      # this should be another route
-      redirect_to new_registration_path
+      redirect_to nace_codes_new_path
     else
       render action: :new
     end

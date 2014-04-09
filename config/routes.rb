@@ -1,4 +1,5 @@
 EnviroPoll::Application.routes.draw do
+  get "nace_codes/new"
   get "static_pages/impressum"
   get "static_pages/index"
   get "impressum/index"
