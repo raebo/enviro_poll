@@ -1,4 +1,6 @@
 EnviroPoll::Application.routes.draw do
+  get "static_pages/impressum"
+  get "static_pages/index"
   get "impressum/index"
   get "registration/index"
   # The priority is based upon order of creation: first created -> highest priority.

@@ -40,7 +40,8 @@
             </div>
             <div class="form-group">
               <%= f.label :organisation_country, "Land" -%>
-              <%= f.text_field :organisation_country, class: 'form-control' -%>
+              <%= f.select :organisation_country, Organisation::COUNTRIES, {prompt: "Bitte auswählen..."},
+              {class: "decorated form-control"} %>
             </div>
           </div>
         </div>
@@ -52,8 +53,9 @@
           </div>
           <div class="panel-body">
             <div class="form-group">
-              <%= f.label :user_form_of_address, "Anrede" -%><br />
-              <%= f.select :user_form_of_address, Organisation::FORMS_OF_ADDRESS, {}, {class: "decorated form-control"} %>
+              <%= f.label :user_form_of_address, "Anrede" -%>
+              <%= f.select :user_form_of_address, Organisation::FORMS_OF_ADDRESS, {prompt: "Bitte auswählen..."},
+              {class: "decorated form-control"} %>
             </div>
             <div class="form-group">
               <%= f.label :user_title, "Titel" -%>
@@ -69,12 +71,12 @@
             </div>
             <div class="form-group">
               <%= f.label :user_birthday, "Geburtsdatum" -%>
-              <%= f.date_field :user_birthday, class: 'form-control' -%>
+              <%= f.text_field :user_birthday, class: 'form-control' -%>
               <!-- date_field does not work -->
             </div>
             <div class="form-group">
               <%= f.label :user_phone, "Telefon" -%>
-              <%= f.telephone_field :user_phone, class: 'form-control' -%>
+              <%= f.text_field :user_phone, class: 'form-control' -%>
               <!-- telephone_field does not work -->
             </div>
             <div class="form-group">
