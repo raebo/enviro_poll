@@ -18,7 +18,7 @@ de:
     new:
       registration: 'Registrierung'
       registration_instruction: 'Bevor Sie die Umfrage starten müssen Sie noch einige Angaben zu Ihrer Organisation und einem Ansprechpartner machen.'
-      alert: 'Bitte überprüfen Sie die rot markierten Felder.'
+      alert: 'Bitte überprüfen Sie die rot markierten Felder, folgende Fehler sind aufgetreten:'
       organisation_head: 'Angaben zur Organisation'
       person_head: 'Angaben zum Ansprechpartner'
       organisation_name: 'Name der Organisation'
@@ -40,3 +40,4 @@ de:
     new:
       nace_code: 'NACE-Code'
       nace_code_instruction: 'Bitte wählen Sie mit Hilfe der Liste den NACE-Code für Ihre Organisation aus.'
+

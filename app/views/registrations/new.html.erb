@@ -6,6 +6,11 @@
   <% if @organisation.errors.any? %>
     <div class="alert alert-danger">
       <%= t('.alert') %>
+      <ul>
+        <% @organisation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
     </div>
   <% end %>
 
@@ -73,12 +78,10 @@
             <div class="form-group">
               <%= f.label :user_birthday, t('.user_birthday') -%>
               <%= f.text_field :user_birthday, class: 'form-control' -%>
-              <!-- date_field nutzen oder eigene validierung?-->
             </div>
             <div class="form-group">
               <%= f.label :user_phone, t('.user_phone') -%>
               <%= f.text_field :user_phone, class: 'form-control' -%>
-              <!-- telephone_field nutzen oder eigene validierung? -->
             </div>
             <div class="form-group">
               <%= f.label :user_fax, t('.user_fax') -%>
@@ -86,8 +89,7 @@
             </div>
             <div class="form-group">
               <%= f.label :user_email, t('.user_email') -%>
-              <%= f.email_field :user_email, class: 'form-control' -%>
-              <!-- email_field nutzen oder eigene validierung? -->
+              <%= f.text_field :user_email, class: 'form-control' -%>
             </div>
           </div>
         </div>
@@ -95,7 +97,6 @@
     </tr>
   </table>
   <span class="pull-right visible-desktop">
-  <!-- link to nace code -->
     <%= f.submit t('.submit_create'), class: 'btn btn-default' -%>
   </span>
 <% end -%>
