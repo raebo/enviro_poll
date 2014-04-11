@@ -31,7 +31,8 @@ class Organisation < ActiveRecord::Base
 	validates :organisation_country, inclusion: {in: COUNTRIES, message: "wurde nicht ausgewählt."}
 	validates :user_form_of_address, inclusion: {in: FORMS_OF_ADDRESS, message: "wurde nicht ausgewählt."}
 	validates :user_email, uniqueness: true
+    validates :user_email, format: {with: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/, message: "ist ungültig.", if: Proc.new { |a| a.user_email.present? }}
 
-	#validate birthday and email
+	#validate birthday with regex or parse date?
 
 end
