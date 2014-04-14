@@ -10,6 +10,7 @@ class RegistrationsController < ApplicationController
 
     if @organisation.save
       flash[:notice] = t('.fn_created')
+      LoginMailer.login_email(@organisation).deliver
       redirect_to nace_codes_new_path
     else
       render action: :new

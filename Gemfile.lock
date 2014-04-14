@@ -162,6 +162,7 @@ DEPENDENCIES
   debugger
   jbuilder (~> 1.2)
   jquery-rails
+  mail
   mysql2
   pry
   pry-rails

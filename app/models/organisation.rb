@@ -18,7 +18,7 @@ class Organisation < ActiveRecord::Base
     :user_last_name => "Das Feld 'Nachname'",
     :user_birthday => "Das Feld 'Geburtsdatum'",
     :user_phone => "Das Feld 'Telefon'",
-    :user_email => "Das Feld 'E-Mail-Adresse'"
+    :user_email => "Die E-Mail-Adresse"
     }
 
     def self.human_attribute_name(attr, options={})
@@ -30,7 +30,7 @@ class Organisation < ActiveRecord::Base
 	presence: {message: "%{value} darf nicht leer sein."} 
 	validates :organisation_country, inclusion: {in: COUNTRIES, message: "wurde nicht ausgewählt."}
 	validates :user_form_of_address, inclusion: {in: FORMS_OF_ADDRESS, message: "wurde nicht ausgewählt."}
-	validates :user_email, uniqueness: true
+	validates :user_email, uniqueness: {message: "wird bereits genutzt."}
     validates :user_email, format: {with: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/, message: "ist ungültig.", if: Proc.new { |a| a.user_email.present? }}
 
 	#validate birthday with regex or parse date?
