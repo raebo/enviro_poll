@@ -8,6 +8,11 @@ de:
       dashboard: 'Startseite'
       information_about_enviropoll: 'EnviroPoll ist eine Webanwendung, mit der Sie den Status des Umweltmanagements Ihrer Organisation überprüfen können. Hier folgt noch mehr Text.'
       start: 'Umfrage starten'
+    authenticate:
+      dashboard_logged_in: 'Startseite'
+      logged_in_1: 'Sie haben sich erfolgreich für die Organisation'
+      logged_in_2: 'angemeldet.'
+      start: 'Umfrage starten'
   static_pages:
     impressum:
       impressum: 'Impressum'
@@ -40,4 +45,3 @@ de:
     new:
       nace_code: 'NACE-Code'
       nace_code_instruction: 'Bitte wählen Sie mit Hilfe der Liste den NACE-Code für Ihre Organisation aus.'
-

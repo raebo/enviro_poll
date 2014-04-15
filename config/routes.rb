@@ -1,4 +1,5 @@
 EnviroPoll::Application.routes.draw do
+  get "logins/index"
   get "nace_codes/new"
   get "static_pages/impressum"
   get "static_pages/index"
@@ -10,7 +11,9 @@ EnviroPoll::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'dashboard#index'
 
-  resources :registrations do
+  resources :registrations 
+
+  resources :dashboard do
     member do
       get 'authenticate'
     end

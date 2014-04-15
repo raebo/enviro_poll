@@ -18,13 +18,6 @@ class RegistrationsController < ApplicationController
     end
   end
 
-  def authenticate
-    @organisation = Organisation.find_by login_token: params[:login_token]
-    #organisation = Organisations.authenticatable.find_by_login_token!(params[:id])
-    # TODO Force-log-in order.seller
-    #redirect_to nace_codes_new_path
-  end
-
   private
   def organisation_params
     # http://guides.rubyonrails.org/action_controller_overview.html#strong-parameters

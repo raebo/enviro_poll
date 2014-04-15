@@ -3,6 +3,8 @@ class Organisation < ActiveRecord::Base
 
     before_create :set_login_token
 
+    scope :authenticatable, where("organisations.login_token IS NOT NULL")
+
 	FORMS_OF_ADDRESS = ["Herr", "Frau"]
 
 	COUNTRIES = ["Belgien", "Dänemark", "Deutschland", "Frankreich", "Luxemburg", "Niederlande", "Österreich", "Polen",
