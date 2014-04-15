@@ -1,6 +1,8 @@
 class Organisation < ActiveRecord::Base
 	#belongs_to :nace_code
 
+    before_create :set_login_token
+
 	FORMS_OF_ADDRESS = ["Herr", "Frau"]
 
 	COUNTRIES = ["Belgien", "Dänemark", "Deutschland", "Frankreich", "Luxemburg", "Niederlande", "Österreich", "Polen",
@@ -32,7 +34,14 @@ class Organisation < ActiveRecord::Base
 	validates :user_form_of_address, inclusion: {in: FORMS_OF_ADDRESS, message: "wurde nicht ausgewählt."}
 	validates :user_email, uniqueness: {message: "wird bereits genutzt."}
     validates :user_email, format: {with: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/, message: "ist ungültig.", if: Proc.new { |a| a.user_email.present? }}
-
 	#validate birthday with regex or parse date?
+
+    private
+    def set_login_token
+      self.login_token = loop do
+        random_token = SecureRandom.urlsafe_base64(16)
+        break random_token unless Organisation.exists?(login_token: random_token)
+      end
+    end
 
 end
