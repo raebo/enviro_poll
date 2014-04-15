@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe ImpressumController do
+describe NaceCodesController do
 
-  describe "GET 'index'" do
+  describe "GET 'new'" do
     it "returns http success" do
-      get 'index'
+      get 'new'
       expect(response).to be_success
     end
   end

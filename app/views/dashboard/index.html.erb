@@ -1,6 +1,5 @@
-<h1>Dashboard</h1>
+<h1><%= t('.dashboard') %></h1>
 
-<p>EnviroPoll ist eine Webanwendung, mit der Sie den Status des Umweltmanagements Ihrer Organisation überprüfen können.<br />
-	Hier noch mehr Text über Enviropoll schreiben.</p>
+<p><%= t('.information_about_enviropoll') %></p>
 
-<%= link_to "Umfrage starten", new_registration_path, class: "btn btn-default" %>
+<%= link_to t('.start'), new_registration_path, class: "btn btn-default" %>

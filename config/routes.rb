@@ -1,4 +1,8 @@
 EnviroPoll::Application.routes.draw do
+  get "logins/index"
+  get "nace_codes/new"
+  get "static_pages/impressum"
+  get "static_pages/index"
   get "impressum/index"
   get "registration/index"
   # The priority is based upon order of creation: first created -> highest priority.
@@ -7,7 +11,13 @@ EnviroPoll::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'dashboard#index'
 
-  resources :registrations
+  resources :registrations 
+
+  resources :dashboard do
+    member do
+      get 'authenticate'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
