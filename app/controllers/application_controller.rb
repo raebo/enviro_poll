@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
   def current_organisation
     @current_organisation ||= session[:current_organisation_id] && Organisation.find_by(id: session[:current_organisation_id])
+    @current_organisation ||= false
   end
 
   def is_logged_in
