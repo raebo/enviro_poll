@@ -20,7 +20,6 @@ class Organisation < ActiveRecord::Base
     :user_form_of_address => "Das Feld 'Anrede'",
     :user_first_name => "Das Feld 'Vorname'",
     :user_last_name => "Das Feld 'Nachname'",
-    :user_birthday => "Das Feld 'Geburtsdatum'",
     :user_phone => "Das Feld 'Telefon'",
     :user_email => "Die E-Mail-Adresse"
     }
@@ -30,13 +29,12 @@ class Organisation < ActiveRecord::Base
     end
 
 	validates :organisation_name, :organisation_street, :organisation_street_number, :organisation_zipcode,
-	:organisation_city, :user_first_name, :user_last_name, :user_birthday, :user_phone, :user_email,
+	:organisation_city, :user_first_name, :user_last_name, :user_phone, :user_email,
 	presence: {message: "%{value} darf nicht leer sein."} 
 	validates :organisation_country, inclusion: {in: COUNTRIES, message: "wurde nicht ausgewählt."}
 	validates :user_form_of_address, inclusion: {in: FORMS_OF_ADDRESS, message: "wurde nicht ausgewählt."}
 	validates :user_email, uniqueness: {message: "wird bereits genutzt."}
     validates :user_email, format: {with: /[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\.[a-zA-Z]{2,4}/, message: "ist ungültig.", if: Proc.new { |a| a.user_email.present? }}
-	#validate birthday with regex or parse date?
 
     private
     def set_login_token

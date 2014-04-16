@@ -8,7 +8,7 @@ class DashboardController < ApplicationController
   def authenticate
   	organisation = Organisation.authenticatable.find_by_login_token!(params[:id])
     session[:current_organisation_id] = organisation.id
-    @organisation_name = current_organisation.organisation_name
+    # TODO: hier noch Fehlerabfang einbauen (wenn man Seite mit ungültigem Token aufruft entsprechende Meldung zeigen)
   end
 
 end
