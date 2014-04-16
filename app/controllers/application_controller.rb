@@ -4,7 +4,11 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def current_organisation
-    @_current_organisation ||= session[:current_organisation_id] && Organisation.find_by(id: session[:current_organisation_id])
+    @current_organisation ||= session[:current_organisation_id] && Organisation.find_by(id: session[:current_organisation_id])
+  end
+
+  def is_logged_in
   end
   
+  helper_method :current_organisation
 end

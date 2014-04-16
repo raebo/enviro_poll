@@ -46,7 +46,7 @@
             </div>
             <div class="form-group">
               <%= f.label :organisation_country, t('.organisation_country') -%>
-              <%= f.select :organisation_country, Organisation::COUNTRIES, {prompt: "Bitte auswählen..."},
+              <%= f.select :organisation_country, Organisation::COUNTRIES, {prompt: "Bitte auswählen...", selected: 'Deutschland'},
               {class: "decorated form-control"} %>
             </div>
           </div>
@@ -64,20 +64,12 @@
               {class: "decorated form-control"} %>
             </div>
             <div class="form-group">
-              <%= f.label :user_title, t('.user_title') -%>
-              <%= f.text_field :user_title, class: 'form-control' -%>
-            </div>
-            <div class="form-group">
               <%= f.label :user_first_name, t('.user_first_name') -%>
               <%= f.text_field :user_first_name, class: 'form-control' -%>
             </div>
             <div class="form-group">
               <%= f.label :user_last_name, t('.user_last_name') -%>
               <%= f.text_field :user_last_name, class: 'form-control' -%>
-            </div>
-            <div class="form-group">
-              <%= f.label :user_birthday, t('.user_birthday') -%>
-              <%= f.text_field :user_birthday, class: 'form-control' -%>
             </div>
             <div class="form-group">
               <%= f.label :user_phone, t('.user_phone') -%>

@@ -3,6 +3,7 @@ de:
     application:
       start: 'Startseite'
       impressum: 'Impressum'
+      show_login: 'Angemeldet als '
   dashboard:
     index:
       dashboard: 'Startseite'
@@ -10,8 +11,8 @@ de:
       start: 'Umfrage starten'
     authenticate:
       dashboard_logged_in: 'Startseite'
-      logged_in_1: 'Sie haben sich erfolgreich für die Organisation'
-      logged_in_2: 'angemeldet.'
+      logged_in_1: 'Sie haben sich erfolgreich für die Organisation "'
+      logged_in_2: '" angemeldet.'
       start: 'Umfrage starten'
   static_pages:
     impressum:
