@@ -21,9 +21,13 @@ de:
       address: 'Oranienstr. 183-184 Aufgang B'
       zipcode_and_city: '10999 Berlin'
   registrations:
-    form:
+    edit:
+      registration: 'Registrierung aktualisieren'
+      registration_instruction: 'Bevor Sie die Umfrage starten, können Sie an dieser Stelle die Angaben zu Ihrer Organisation und ihrem Ansprechpartner aktualisieren.'
+    new:
       registration: 'Registrierung'
       registration_instruction: 'Bevor Sie die Umfrage starten müssen Sie noch einige Angaben zu Ihrer Organisation und einem Ansprechpartner machen.'
+    form:
       alert: 'Bitte überprüfen Sie die rot markierten Felder, folgende Fehler sind aufgetreten:'
       organisation_head: 'Angaben zur Organisation'
       person_head: 'Angaben zum Ansprechpartner'

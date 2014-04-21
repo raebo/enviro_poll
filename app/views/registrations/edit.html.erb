@@ -1,1 +1,8 @@
-<%= render 'form' %>
+<h1><%= t('.registration') %></h1>
+<p><%= t('.registration_instruction') %></p>
+
+<%= form_for @organisation, url: registration_path(@organisation), html: {class: 'form-horizontal', role: 'form'} do |f| -%>
+
+  <%= render partial: 'form', locals: {f: f} %>
+
+<% end -%>
