@@ -25,8 +25,8 @@
   <div id="footer">
     © 2014 Siimbyant UG
     <span class="pull-right visible-desktop">
-        <%= t('.show_login') + current_organisation.organisation_name unless current_organisation.blank? -%>
-      |
+      <%= t('.show_login') + current_organisation.organisation_name unless current_organisation.blank? %>
+      <%= "|" unless current_organisation.blank? %>
       <%= link_to t('.start'), root_path, class: "greylink" %>
       |
       <%= link_to t('.impressum'), static_pages_impressum_path, class: "greylink" %>

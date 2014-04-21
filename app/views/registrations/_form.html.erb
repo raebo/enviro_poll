@@ -1,0 +1,94 @@
+<h1><%= t('.registration') %></h1>
+<p><%= t('.registration_instruction') %></p>
+
+<%= form_for @organisation, url: registrations_path, html: {class: 'form-horizontal', role: 'form'} do |f| -%>
+
+  <% if @organisation.errors.any? %>
+    <div class="alert alert-danger">
+      <%= t('.alert') %>
+      <ul>
+        <% @organisation.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr>
+      <td>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= t('.organisation_head') %></h3>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <%= f.label :organisation_name, t('.organisation_name') -%>
+              <%= f.text_field :organisation_name, class: 'form-control' -%>
+            </div>
+            <div class="form-group">
+              <label>Standort</label><br/>
+              <%= f.label :organisation_street, t('.organisation_street') -%>
+              <%= f.text_field :organisation_street, class: 'form-control' -%>
+            </div>
+            <div class="form-group">
+              <%= f.label :organisation_street_number, t('.organisation_street_number') -%>
+              <%= f.text_field :organisation_street_number, class: 'form-control' -%>
+              <!-- Strasse und Hausnummer eventuell zusammen in ein Feld eintragen -->
+            </div>
+            <div class="form-group">
+              <%= f.label :organisation_zipcode, t('.organisation_zipcode') -%>
+              <%= f.text_field :organisation_zipcode, class: 'form-control' -%>
+            </div>
+            <div class="form-group">
+              <%= f.label :organisation_city, t('.organisation_city') -%>
+              <%= f.text_field :organisation_city, class: 'form-control' -%>
+            </div>
+            <div class="form-group">
+              <%= f.label :organisation_country, t('.organisation_country') -%>
+              <%= f.select :organisation_country, Organisation::COUNTRIES, {prompt: "Bitte auswählen...", selected: 'Deutschland'},
+              {class: "decorated form-control"} %>
+            </div>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= t('.person_head') %></h3>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <%= f.label :user_form_of_address, t('.user_form_of_address') -%>
+              <%= f.select :user_form_of_address, Organisation::FORMS_OF_ADDRESS, {prompt: "Bitte auswählen..."},
+              {class: "decorated form-control"} %>
+            </div>
+            <div class="form-group">
+              <%= f.label :user_first_name, t('.user_first_name') -%>
+              <%= f.text_field :user_first_name, class: 'form-control' -%>
+            </div>
+            <div class="form-group">
+              <%= f.label :user_last_name, t('.user_last_name') -%>
+              <%= f.text_field :user_last_name, class: 'form-control' -%>
+            </div>
+            <div class="form-group">
+              <%= f.label :user_phone, t('.user_phone') -%>
+              <%= f.text_field :user_phone, class: 'form-control' -%>
+            </div>
+            <div class="form-group">
+              <%= f.label :user_fax, t('.user_fax') -%>
+              <%= f.text_field :user_fax, class: 'form-control' -%>
+            </div>
+            <div class="form-group">
+              <%= f.label :user_email, t('.user_email') -%>
+              <%= f.text_field :user_email, class: 'form-control' -%>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </table>
+  <span class="pull-right visible-desktop">
+    <%= f.submit t('.submit_create'), class: 'btn btn-default' -%>
+  </span>
+<% end -%>
