@@ -5,7 +5,7 @@ class RegistrationsController < ApplicationController
   end
 
   def edit
-    @organisation = Organisation.find_by_login_token!(params[:id])
+    @organisation = Organisation.find(params[:id])
   end
 
   def create
@@ -21,7 +21,7 @@ class RegistrationsController < ApplicationController
   end
 
   def update
-    @organisation = Organisation.find_by_login_token!(params[:id])
+    @organisation = Organisation.find(params[:id])
     if @organisation.update_attributes(organisation_params)
       redirect_to nace_codes_new_path
     else
