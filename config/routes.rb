@@ -13,6 +13,8 @@ EnviroPoll::Application.routes.draw do
 
   resources :registrations 
 
+  resources :nace_codes
+
   resources :dashboard do
     member do
       get 'authenticate'

@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422120107) do
+ActiveRecord::Schema.define(version: 20140422134347) do
 
   create_table "nace_codes", force: true do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "code"
     t.string   "description"
+    t.string   "ancestry"
   end
 
   create_table "organisations", force: true do |t|

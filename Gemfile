@@ -42,6 +42,8 @@ gem 'mail'
 
 gem 'activerecord-session_store', '~> 0.1.0'
 
+gem 'ancestry'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
