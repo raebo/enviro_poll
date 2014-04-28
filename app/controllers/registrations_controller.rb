@@ -5,7 +5,7 @@ class RegistrationsController < ApplicationController
   end
 
   def edit
-    @organisation = Organisation.find(params[:id])
+    @organisation = Organisation.find_by_login_token!(params[:id])
   end
 
   def create

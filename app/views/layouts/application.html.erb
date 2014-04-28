@@ -27,7 +27,10 @@
     <span class="pull-right visible-desktop">
       <%= t('.show_login') + current_organisation.organisation_name unless current_organisation.blank? %>
       <%= "|" unless current_organisation.blank? %>
-      <%= link_to t('.start'), root_path, class: "greylink" %>
+      <%= link_to t('.start'), root_path, class: "greylink" if current_organisation.blank? %>
+      <%= link_to t('.start'), authenticate_dashboard_url(current_organisation.login_token), class: "greylink" unless current_organisation.blank? %>
+      |
+      <%= link_to t('.sendloginmail'), static_pages_sendloginmail_path, class: "greylink" %>
       |
       <%= link_to t('.impressum'), static_pages_impressum_path, class: "greylink" %>
     </span>

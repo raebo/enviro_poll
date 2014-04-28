@@ -1,32 +1,30 @@
 de:
-  layouts:
-    application:
-      start: 'Startseite'
-      impressum: 'Impressum'
-      show_login: 'Angemeldet als '
   dashboard:
-    index:
-      dashboard: 'Startseite'
-      information_about_enviropoll: 'EnviroPoll ist eine Webanwendung, mit der Sie den Status des Umweltmanagements Ihrer Organisation überprüfen können. Hier folgt noch mehr Text.'
-      start: 'Umfrage starten'
     authenticate:
       dashboard_logged_in: 'Startseite'
       logged_in_1: 'Sie haben sich erfolgreich für die Organisation "'
       logged_in_2: '" angemeldet.'
       start: 'Umfrage starten'
-  static_pages:
-    impressum:
+    index:
+      dashboard: 'Startseite'
+      information_about_enviropoll: 'EnviroPoll ist eine Webanwendung, mit der Sie den Status des Umweltmanagements Ihrer Organisation überprüfen können. Hier folgt noch mehr Text.'
+      start: 'Umfrage starten'
+  layouts:
+    application:
+      start: 'Startseite'
       impressum: 'Impressum'
-      siimbyant: 'Siimbyant UG (haftungsbeschränkt)'
-      address: 'Oranienstr. 183-184 Aufgang B'
-      zipcode_and_city: '10999 Berlin'
-  registrations:
-    edit:
-      registration: 'Registrierung aktualisieren'
-      registration_instruction: 'Bevor Sie die Umfrage starten, können Sie an dieser Stelle die Angaben zu Ihrer Organisation und ihrem Ansprechpartner aktualisieren.'
+      sendloginmail: 'Login-Link vergessen'
+      show_login: 'Angemeldet als '
+  login_mailer:
+    login_email:
+      welcome: 'Herzlich Willkommen bei EnviroPoll,'
+      registration_succesful: 'Sie haben sich erfolgreich registriert.'
+      click_to_login: 'Um sich einzuloggen klicken Sie auf diesen Link:'
+  nace_codes:
     new:
-      registration: 'Registrierung'
-      registration_instruction: 'Bevor Sie die Umfrage starten müssen Sie noch einige Angaben zu Ihrer Organisation und einem Ansprechpartner machen.'
+      nace_code: 'NACE-Code'
+      nace_code_instruction: 'Bitte wählen Sie mit Hilfe der Liste den NACE-Code für Ihre Organisation aus.'
+  registrations:
     form:
       alert: 'Bitte überprüfen Sie die rot markierten Felder, folgende Fehler sind aufgetreten:'
       organisation_head: 'Angaben zur Organisation'
@@ -46,7 +44,18 @@ de:
       user_fax: 'Fax'
       user_email: 'E-Mail-Adresse'
       submit_create: 'Speichern'
-  nace_codes:
+    edit:
+      registration: 'Registrierung aktualisieren'
+      registration_instruction: 'Bevor Sie die Umfrage starten, können Sie an dieser Stelle die Angaben zu Ihrer Organisation und ihrem Ansprechpartner aktualisieren.'
     new:
-      nace_code: 'NACE-Code'
-      nace_code_instruction: 'Bitte wählen Sie mit Hilfe der Liste den NACE-Code für Ihre Organisation aus.'
+      registration: 'Registrierung'
+      registration_instruction: 'Bevor Sie die Umfrage starten müssen Sie noch einige Angaben zu Ihrer Organisation und einem Ansprechpartner machen.'
+  static_pages:
+    impressum:
+      impressum: 'Impressum'
+      siimbyant: 'Siimbyant UG (haftungsbeschränkt)'
+      address: 'Oranienstr. 183-184 Aufgang B'
+      zipcode_and_city: '10999 Berlin'
+    sendloginmail:
+      loginmail: 'Login-Link vergessen'
+      loginmail_instruction: 'Sollten Sie nicht mehr im Besitz Ihres Login-Links sein mit dem Sie sich bei EnviroPoll anmelden können, können Sie sich hier erneut eine E-Mail mit ihrem Login-Link zusenden lassen. Geben Sie dazu die E-Mail-Adresse des Ansprechpartners an, den Sie bei der Registrierung bei EnviroPoll eingetragen haben.'

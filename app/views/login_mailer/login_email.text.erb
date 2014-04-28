@@ -1,4 +1,4 @@
-Herzlich Willkommen bei EnviroPoll, <%= @organisation.user_first_name %> <%= @organisation.user_last_name %>.
+<%= t('.welcome') %> <%= @organisation.user_first_name %> <%= @organisation.user_last_name %>.
  
-Sie haben sich erfolgreich registriert.
-Um sich einzuloggen klicken Sie auf diesen Link: <%= @url %>
+<%= t('.registration_succesful') %>
+<%= t('.click_to_login') %> <%= @url %>
