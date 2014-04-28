@@ -14,6 +14,7 @@ class RegistrationsController < ApplicationController
 
     if @organisation.save
       LoginMailer.login_email(@organisation).deliver
+      session[:current_organisation_id] = @organisation.id
       redirect_to nace_codes_new_path
     else
       render action: :new
