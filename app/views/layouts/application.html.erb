@@ -19,6 +19,9 @@
   </div>
 
   <div id="main">
+    <% flash.each do |name, msg| -%>
+      <div class="alert alert-default"><%= content_tag :div, msg, class: name %></div>
+    <% end -%>
     <%= yield %>
   </div>
 
@@ -30,7 +33,7 @@
       <%= link_to t('.start'), root_path, class: "greylink" if current_organisation.blank? %>
       <%= link_to t('.start'), authenticate_dashboard_url(current_organisation.login_token), class: "greylink" unless current_organisation.blank? %>
       |
-      <%= link_to t('.sendloginmail'), static_pages_sendloginmail_path, class: "greylink" %>
+      <%= link_to t('.sendloginmail'), send_login_mails_new_path, class: "greylink" %>
       |
       <%= link_to t('.impressum'), static_pages_impressum_path, class: "greylink" %>
     </span>

@@ -1,0 +1,10 @@
+<h1><%= t('.loginmail') %></h1>
+<p><%= t('.loginmail_instruction') %><br />
+
+<div class="form-group">
+  <%= form_for @organisation, url: send_login_mails_path, html: {class: 'form-inline'} do |f| %>
+    <%= f.label :user_email, "E-Mail-Adresse:" %>
+    <%= f.text_field :user_email, class: 'form-control' %>
+    <%= f.submit "Absenden", class: 'btn btn-default' %>
+  <% end %>
+</div>

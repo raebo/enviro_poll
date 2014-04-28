@@ -1,0 +1,2 @@
+module SendLoginMailsHelper
+end

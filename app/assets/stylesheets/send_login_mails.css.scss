@@ -1,0 +1,26 @@
+.form-control:focus
+{
+	border-color: #B0E04A;
+	box-shadow: 0 0 10px #B0E04A;
+  color: #000000;
+}
+
+.alert-danger
+{
+  background-color: #F80000;
+  border-color: #000000;
+  color: #000000;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+.form-group .field_with_errors
+{
+  background-color: #FFFFFF;
+  color: #F80000;
+  width: 100%;
+}

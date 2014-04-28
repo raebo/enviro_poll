@@ -15,6 +15,10 @@ de:
       impressum: 'Impressum'
       sendloginmail: 'Login-Link vergessen'
       show_login: 'Angemeldet als '
+  login_forgotten_mailer:
+    login_forgotten_email:
+      login_link: 'Dieser Login-Link gilt für die Organisation'
+      click_to_login: 'Um sich einzuloggen klicken Sie auf diesen Link:'
   login_mailer:
     login_email:
       welcome: 'Herzlich Willkommen bei EnviroPoll,'
@@ -50,12 +54,13 @@ de:
     new:
       registration: 'Registrierung'
       registration_instruction: 'Bevor Sie die Umfrage starten müssen Sie noch einige Angaben zu Ihrer Organisation und einem Ansprechpartner machen.'
+  send_login_mails:
+    new:
+      loginmail: 'Login-Link vergessen'
+      loginmail_instruction: 'Sollten Sie nicht mehr im Besitz Ihres Login-Links sein mit dem Sie sich bei EnviroPoll anmelden können, können Sie sich hier erneut eine E-Mail mit ihrem Login-Link zusenden lassen. Geben Sie dazu die E-Mail-Adresse des Ansprechpartners an, den Sie bei der Registrierung bei EnviroPoll eingetragen haben.'
   static_pages:
     impressum:
       impressum: 'Impressum'
       siimbyant: 'Siimbyant UG (haftungsbeschränkt)'
       address: 'Oranienstr. 183-184 Aufgang B'
       zipcode_and_city: '10999 Berlin'
-    sendloginmail:
-      loginmail: 'Login-Link vergessen'
-      loginmail_instruction: 'Sollten Sie nicht mehr im Besitz Ihres Login-Links sein mit dem Sie sich bei EnviroPoll anmelden können, können Sie sich hier erneut eine E-Mail mit ihrem Login-Link zusenden lassen. Geben Sie dazu die E-Mail-Adresse des Ansprechpartners an, den Sie bei der Registrierung bei EnviroPoll eingetragen haben.'

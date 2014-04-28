@@ -1,11 +1,10 @@
 EnviroPoll::Application.routes.draw do
+  get "send_login_mails/new"
   get "logins/index"
   get "nace_codes/new"
   get "static_pages/impressum"
-  get "static_pages/sendloginmail"
   get "static_pages/index"
   get "impressum/index"
-  get "sendloginmail/index"
   get "registration/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -15,6 +14,8 @@ EnviroPoll::Application.routes.draw do
 
   resources :registrations 
 
+  resources :send_login_mails
+
   resources :nace_codes
 
   resources :dashboard do
@@ -22,6 +23,7 @@ EnviroPoll::Application.routes.draw do
       get 'authenticate'
     end
   end
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
