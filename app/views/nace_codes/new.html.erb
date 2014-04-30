@@ -1,40 +1,42 @@
 <h1><%= t('.nace_code') %></h1>
 <p><%= t('.nace_code_instruction') %></p>
 
-<ul id="abschnitt">
-  <% @nace_codes.roots.each do |nace_code| %>
-     <li>  <button type="button" class="btn btn-link"><%= nace_code.code + " - " + nace_code.description %></button>
-        <% unless nace_code.children.empty? %>
-           <ul id="abteilung"> 
-             <% nace_code.children.each do |nace_code_sub| %>
-                <li> <button type="button" class="btn btn-link"><%= nace_code_sub.code + " - " + nace_code_sub.description %></button>
-                  <% unless nace_code_sub.children.empty? %>
-                    <ul id="gruppe"> 
-                      <% nace_code_sub.children.each do |nace_code_sub2| %>
-                        <li> <button type="button" class="btn btn-link"><%= nace_code_sub2.code + " - " + nace_code_sub2.description %></button>
-                          <% unless nace_code_sub2.children.empty? %>
-                            <ul id="klasse"> 
-                              <% nace_code_sub2.children.each do |nace_code_sub3| %>
-                                <li> <button type="button" class="btn btn-link"><%= nace_code_sub3.code + " - " + nace_code_sub3.description %></button>
-                                  <% unless nace_code_sub3.children.empty? %>
-                                    <ul id="unterklasse"> 
-                                      <% nace_code_sub3.children.each do |nace_code_sub4| %>
-                                        <li> <%= nace_code_sub4.code + " - " + nace_code_sub4.description %> </li>
-                                      <% end %>
-                                    </ul>
-                                  <% end %>
-                                </li>
-                              <% end %>
-                             </ul>
-                           <% end %>
-                        </li>
-                      <% end %>
-                    </ul>
-                  <% end %>
-                </li>
-             <% end %>
-           </ul>
-        <% end %>
-     </li>
-  <% end %>
-</ul>
+<div id="listcontainer">
+  <ul id="list">
+    <% @nace_codes.roots.each do |nace_code| %>
+       <li> <%= nace_code.code + " - " + nace_code.description %>
+          <% unless nace_code.children.empty? %>
+             <ul> 
+               <% nace_code.children.each do |nace_code_sub| %>
+                  <li> <%= nace_code_sub.code + " - " + nace_code_sub.description %>
+                    <% unless nace_code_sub.children.empty? %>
+                      <ul> 
+                        <% nace_code_sub.children.each do |nace_code_sub2| %>
+                          <li> <%= nace_code_sub2.code + " - " + nace_code_sub2.description %>
+                            <% unless nace_code_sub2.children.empty? %>
+                              <ul> 
+                                <% nace_code_sub2.children.each do |nace_code_sub3| %>
+                                  <li> <%= nace_code_sub3.code + " - " + nace_code_sub3.description %>
+                                    <% unless nace_code_sub3.children.empty? %>
+                                      <ul> 
+                                        <% nace_code_sub3.children.each do |nace_code_sub4| %>
+                                          <li> <%= nace_code_sub4.code + " - " + nace_code_sub4.description %> </li>
+                                        <% end %>
+                                      </ul>
+                                    <% end %>
+                                  </li>
+                                <% end %>
+                               </ul>
+                             <% end %>
+                          </li>
+                        <% end %>
+                      </ul>
+                    <% end %>
+                  </li>
+               <% end %>
+             </ul>
+          <% end %>
+       </li>
+    <% end %>
+  </ul>
+</div>
