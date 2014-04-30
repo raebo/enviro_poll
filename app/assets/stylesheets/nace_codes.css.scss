@@ -1,3 +1,19 @@
-// Place all the styles related to the NaceCodes controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.btn-link
+{
+  color: #000000;
+  padding: 0px;
+}
+
+.btn-link:hover
+{
+  background-color: #B0E04A;
+  color: #000000;
+  text-decoration: none;
+}
+
+.btn-link:focus
+{
+  background-color: #B0E04A; 
+  color: #000000;
+  text-decoration: none;
+}

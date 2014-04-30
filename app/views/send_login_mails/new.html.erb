@@ -3,8 +3,8 @@
 
 <div class="form-group">
   <%= form_for @organisation, url: send_login_mails_path, html: {class: 'form-inline'} do |f| %>
-    <%= f.label :user_email, "E-Mail-Adresse:" %>
+    <%= f.label :user_email, t('.email') %>
     <%= f.text_field :user_email, class: 'form-control' %>
-    <%= f.submit "Absenden", class: 'btn btn-default' %>
+    <%= f.submit t('.send'), class: 'btn btn-default' %>
   <% end %>
 </div>

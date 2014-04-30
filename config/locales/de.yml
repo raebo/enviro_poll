@@ -58,6 +58,8 @@ de:
     new:
       loginmail: 'Login-Link vergessen'
       loginmail_instruction: 'Sollten Sie nicht mehr im Besitz Ihres Login-Links sein mit dem Sie sich bei EnviroPoll anmelden können, können Sie sich hier erneut eine E-Mail mit ihrem Login-Link zusenden lassen. Geben Sie dazu die E-Mail-Adresse des Ansprechpartners an, den Sie bei der Registrierung bei EnviroPoll eingetragen haben.'
+      email: 'E-Mail-Adresse:'
+      send: 'Absenden'
   static_pages:
     impressum:
       impressum: 'Impressum'
