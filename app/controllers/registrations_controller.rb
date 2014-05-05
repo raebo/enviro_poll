@@ -15,7 +15,7 @@ class RegistrationsController < ApplicationController
     if @organisation.save
       LoginMailer.login_email(@organisation).deliver
       session[:current_organisation_id] = @organisation.id
-      redirect_to nace_codes_new_path
+      redirect_to nace_codes_edit_path
     else
       render action: :new
     end
@@ -24,7 +24,7 @@ class RegistrationsController < ApplicationController
   def update
     @organisation = Organisation.find(params[:id])
     if @organisation.update_attributes(organisation_params)
-      redirect_to nace_codes_new_path
+      redirect_to nace_codes_edit_path
     else
       render action: :edit
     end

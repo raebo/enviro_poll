@@ -1,0 +1,8 @@
+<h1><%= t('.nace_code') %></h1>
+<p><%= t('.nace_code_instruction') %></p>
+
+<%= form_for @organisation, url: nace_code_path(@organisation), html: {class: 'form-horizontal', role: 'form'} do |f| %>
+
+ <%= render partial: 'form', locals: {f: f} %>
+  
+<% end %>

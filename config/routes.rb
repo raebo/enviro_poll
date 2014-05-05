@@ -1,7 +1,7 @@
 EnviroPoll::Application.routes.draw do
   get "send_login_mails/new"
   get "logins/index"
-  get "nace_codes/new"
+  get "nace_codes/edit"
   get "static_pages/impressum"
   get "static_pages/index"
   get "impressum/index"

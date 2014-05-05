@@ -25,7 +25,9 @@ de:
       registration_succesful: 'Sie haben sich erfolgreich registriert.'
       click_to_login: 'Um sich einzuloggen klicken Sie auf diesen Link:'
   nace_codes:
-    new:
+    form:
+      submit_save: 'Speichern'
+    edit:
       nace_code: 'NACE-Code'
       nace_code_instruction: 'Bitte wählen Sie mit Hilfe der Liste den NACE-Code für Ihre Organisation aus.'
   registrations:

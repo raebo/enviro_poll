@@ -1,5 +1,5 @@
 class Organisation < ActiveRecord::Base
-	#belongs_to :nace_code
+	belongs_to :nace_code
 
     before_create :set_login_token
 
