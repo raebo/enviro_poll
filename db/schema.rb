@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140422134347) do
+ActiveRecord::Schema.define(version: 20140512151048) do
 
   create_table "nace_codes", force: true do |t|
     t.datetime "created_at"
@@ -19,6 +19,14 @@ ActiveRecord::Schema.define(version: 20140422134347) do
     t.string   "code"
     t.string   "description"
     t.string   "ancestry"
+  end
+
+  create_table "organisation_surveys", force: true do |t|
+    t.integer  "organisation_id"
+    t.integer  "survey_id"
+    t.datetime "organisation_survey_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "organisations", force: true do |t|
@@ -40,6 +48,23 @@ ActiveRecord::Schema.define(version: 20140422134347) do
     t.string   "login_token"
   end
 
+  create_table "questions", force: true do |t|
+    t.integer  "survey_id"
+    t.integer  "topic_id"
+    t.string   "question_title"
+    t.text     "question_description"
+    t.string   "unit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "question_measurement"
+  end
+
+  create_table "results", force: true do |t|
+    t.string   "result_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "sessions", force: true do |t|
     t.string   "session_id", null: false
     t.text     "data"
@@ -49,5 +74,27 @@ ActiveRecord::Schema.define(version: 20140422134347) do
 
   add_index "sessions", ["session_id"], name: "index_sessions_on_session_id", unique: true, using: :btree
   add_index "sessions", ["updated_at"], name: "index_sessions_on_updated_at", using: :btree
+
+  create_table "survey_results", force: true do |t|
+    t.integer  "organisation_survey_id"
+    t.integer  "question_id"
+    t.float    "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "result_id"
+  end
+
+  create_table "surveys", force: true do |t|
+    t.string   "survey_title"
+    t.text     "survey_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "topics", force: true do |t|
+    t.string   "topic_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

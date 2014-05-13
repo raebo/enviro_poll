@@ -9,7 +9,7 @@
   			$(this).toggleClass('expanded');
   			$(this).children('ul').toggle('medium');
   		}
-  		return false;
+  		event.stopPropagation();
   	})
   	.addClass('collapsed')
   	.children('ul').hide();

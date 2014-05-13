@@ -1,5 +1,6 @@
 class Organisation < ActiveRecord::Base
 	belongs_to :nace_code
+    has_many :organisation_surveys
 
     before_create :set_login_token
 
