@@ -9,7 +9,7 @@ class NaceCodesController < ApplicationController
     @organisation = Organisation.find(session[:current_organisation_id])
 
     if @organisation.update_attributes(organisation_params)
-      redirect_to nace_codes_edit_path
+      redirect_to questions_edit_path
     else
       render action: :edit
     end
