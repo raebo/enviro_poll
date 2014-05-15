@@ -30,9 +30,12 @@ de:
     edit:
       nace_code: 'NACE-Code'
       nace_code_instruction: 'Bitte wählen Sie mit Hilfe der Liste den NACE-Code für Ihre Organisation aus.'
+    update:
+      choose: 'Bitte wählen Sie einen NACE-Code aus.'
   questions:
-    edit:
-      question: 'Frage x von x'
+    question:
+      question: 'Frage'
+      from: 'von'
   registrations:
     form:
       alert: 'Bitte überprüfen Sie die rot markierten Felder, folgende Fehler sind aufgetreten:'
