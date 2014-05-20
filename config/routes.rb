@@ -1,5 +1,5 @@
 EnviroPoll::Application.routes.draw do
-  get "questions/edit"
+  get "questions/new"
   get "send_login_mails/new"
   get "logins/index"
   get "nace_codes/edit"
@@ -18,6 +18,8 @@ EnviroPoll::Application.routes.draw do
   resources :send_login_mails
 
   resources :nace_codes
+
+  resources :questions
 
   resources :dashboard do
     member do

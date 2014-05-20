@@ -36,6 +36,7 @@ de:
     question:
       question: 'Frage'
       from: 'von'
+      submit: 'Speichern'
   registrations:
     form:
       alert: 'Bitte überprüfen Sie die rot markierten Felder, folgende Fehler sind aufgetreten:'
@@ -53,9 +54,9 @@ de:
       user_last_name: 'Nachname'
       user_birthday: 'Geburtsdatum'
       user_phone: 'Telefon'
-      user_fax: 'Fax'
+      user_fax: 'Fax (optional)'
       user_email: 'E-Mail-Adresse'
-      submit_create: 'Speichern'
+      submit: 'Speichern'
     edit:
       registration: 'Registrierung aktualisieren'
       registration_instruction: 'Bevor Sie die Umfrage starten, können Sie an dieser Stelle die Angaben zu Ihrer Organisation und ihrem Ansprechpartner aktualisieren.'

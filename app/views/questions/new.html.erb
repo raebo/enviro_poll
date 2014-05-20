@@ -1,0 +1,6 @@
+<%= form_for @survey_result, url: questions_path, html: {class: 'form-horizontal', role: 'form'} do |f| %>
+
+<%= render partial: 'question', locals: {f: f} %>
+
+<% end %>
+

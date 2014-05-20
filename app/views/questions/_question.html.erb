@@ -1,0 +1,10 @@
+<h1><%= t('.question') %> <%= session[:counter] %> <%= t('.from') %> <%= @sum_questions %></h1>
+
+<h3> <%= @current_question.topic.topic_name %> - <%= @current_question.question_title %></h3>
+<p><%= @current_question.question_measurement %></p>
+
+<%= f.radio_button :result_id, 1 %> <%= f.label :result_id, 'ja' %></br>
+<%= f.radio_button :result_id, 2 %> <%= f.label :result_id, 'nein' %></br>
+<%= f.radio_button :result_id, 3 %> <%= f.label :result_id, 'ist irrelevant' %></br>
+</br>
+<%= f.submit t('.submit'), class: 'btn btn-default' %>
