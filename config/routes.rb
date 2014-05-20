@@ -4,7 +4,7 @@ EnviroPoll::Application.routes.draw do
   get "logins/index"
   get "nace_codes/edit"
   get "static_pages/impressum"
-  get "static_pages/index"
+  get "static_pages/morequestions"
   get "impressum/index"
   get "registration/index"
   # The priority is based upon order of creation: first created -> highest priority.

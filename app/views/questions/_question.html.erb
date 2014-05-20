@@ -3,8 +3,8 @@
 <h3> <%= @current_question.topic.topic_name %> - <%= @current_question.question_title %></h3>
 <p><%= @current_question.question_measurement %></p>
 
-<%= f.radio_button :result_id, 1 %> <%= f.label :result_id, 'ja' %></br>
-<%= f.radio_button :result_id, 2 %> <%= f.label :result_id, 'nein' %></br>
-<%= f.radio_button :result_id, 3 %> <%= f.label :result_id, 'ist irrelevant' %></br>
+<%= f.radio_button :result_id, 1 %> <%= f.label :result_id, @results.find(1).result_name %></br>
+<%= f.radio_button :result_id, 2 %> <%= f.label :result_id, @results.find(2).result_name %></br>
+<%= f.radio_button :result_id, 3 %> <%= f.label :result_id, @results.find(3).result_name %></br>
 </br>
 <%= f.submit t('.submit'), class: 'btn btn-default' %>

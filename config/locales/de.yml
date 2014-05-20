@@ -75,3 +75,6 @@ de:
       siimbyant: 'Siimbyant UG (haftungsbeschränkt)'
       address: 'Oranienstr. 183-184 Aufgang B'
       zipcode_and_city: '10999 Berlin'
+    morequestions:
+      morequestions: 'Weitere Fragen'
+      morequestions_question: 'Möchten Sie weitere Fragen zu optionalen Umweltkennzahlen beantworten?'
