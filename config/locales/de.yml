@@ -30,6 +30,8 @@ de:
     edit:
       nace_code: 'NACE-Code'
       nace_code_instruction: 'Bitte wählen Sie mit Hilfe der Liste den NACE-Code für Ihre Organisation aus.'
+      nace_code_chosen: 'Sie haben bereits den folgenden NACE-Code ausgewählt: '
+      nace_code_edit: ' Sie können ihn jedoch editieren indem Sie einen neuen NACE-Code auswählen.'
     update:
       choose: 'Bitte wählen Sie einen NACE-Code aus.'
   questions:

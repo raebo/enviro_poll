@@ -1,5 +1,7 @@
 <h1><%= t('.nace_code') %></h1>
-<p><%= t('.nace_code_instruction') %></p>
+<p><%= t('.nace_code_instruction') if @organisation.nace_code_id.blank? %></p>
+<p><%= t('.nace_code_chosen') + @organisation.nace_code.code + " (" + @organisation.nace_code.description + ")." unless @organisation.nace_code_id.blank? %></br>
+<%= t('.nace_code_edit') unless @organisation.nace_code_id.blank? %></p>
 
 <%= form_for @organisation, url: nace_code_path(@organisation), html: {class: 'form-horizontal', role: 'form'} do |f| %>
 

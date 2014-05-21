@@ -7,4 +7,9 @@
 <%= f.radio_button :result_id, 2 %> <%= f.label :result_id, @results.find(2).result_name %></br>
 <%= f.radio_button :result_id, 3 %> <%= f.label :result_id, @results.find(3).result_name %></br>
 </br>
+<div id="hiddenquestion">
+  <%= @current_question.question_description %></br>
+  <%= f.text_field :value, class: 'value_field' %>
+</div>
+</br>
 <%= f.submit t('.submit'), class: 'btn btn-default' %>
