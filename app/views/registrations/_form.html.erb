@@ -83,6 +83,8 @@
     </td>
   </tr>
 </table>
+<%= link_to t('.back_1'), dashboard_index_path, class: "btn btn-default" if current_organisation.blank? %>
+<%= link_to t('.back_2'), authenticate_dashboard_url(current_organisation.login_token), class: "btn btn-default" unless current_organisation.blank? %>
 <span class="pull-right visible-desktop">
   <%= f.submit t('.submit'), class: 'btn btn-default' %>
 </span>

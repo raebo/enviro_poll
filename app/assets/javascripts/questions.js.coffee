@@ -1,6 +1,5 @@
-`$(document).ready(function(){
-
-    $("#hiddenquestion").hide();
+`function controlDiv() {
+  $("#hiddenquestion").hide();
 
     $("input:radio[name='survey_result[result_id]']").change(function(){  
 
@@ -11,5 +10,9 @@
             }
 
     });
-
-});`
+  };`
+`var ready = function() {
+    controlDiv()
+};`
+`$(document).ready(ready);`
+`$(document).on('page:load', ready);`

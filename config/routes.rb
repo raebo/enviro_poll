@@ -1,5 +1,4 @@
 EnviroPoll::Application.routes.draw do
-  get "questions/new"
   get "send_login_mails/new"
   get "logins/index"
   get "nace_codes/edit"

@@ -1,7 +1,9 @@
-<h1><%= t('.question') %> <%= session[:counter] %> <%= t('.from') %> <%= @sum_questions %></h1>
+<h1><%= t('.question') %> <%= session[:curr_ques] %> <%= t('.from') %> <%= @sum_questions %></h1>
 
 <h3> <%= @current_question.topic.topic_name %> - <%= @current_question.question_title %></h3>
 <p><%= @current_question.question_measurement %></p>
+
+<%= @param %>
 
 <%= f.radio_button :result_id, 1 %> <%= f.label :result_id, @results.find(1).result_name %></br>
 <%= f.radio_button :result_id, 2 %> <%= f.label :result_id, @results.find(2).result_name %></br>
@@ -9,7 +11,13 @@
 </br>
 <div id="hiddenquestion">
   <%= @current_question.question_description %></br>
-  <%= f.text_field :value, class: 'value_field' %>
+  <div class="setwidth"><%= f.text_field :value, class: 'form-control' %></div>
 </div>
 </br>
+<%= link_to t('.back'), nace_codes_edit_path, class: "btn btn-default" if session[:curr_ques] == 1 %>
+<% if (session[:curr_ques] > 1) && (session[:curr_ques] <= 9) %>
+  <%= link_to t('.back'), new_question_url(number: session[:prev_ques]), class: "btn btn-default" %>
+<% end %>
+<span class="pull-right visible-desktop">
 <%= f.submit t('.submit'), class: 'btn btn-default' %>
+</span>

@@ -26,7 +26,8 @@ de:
       click_to_login: 'Um sich einzuloggen klicken Sie auf diesen Link:'
   nace_codes:
     form:
-      submit_save: 'Speichern'
+      back: 'Zurück'
+      submit: 'Speichern'
     edit:
       nace_code: 'NACE-Code'
       nace_code_instruction: 'Bitte wählen Sie mit Hilfe der Liste den NACE-Code für Ihre Organisation aus.'
@@ -38,6 +39,7 @@ de:
     question:
       question: 'Frage'
       from: 'von'
+      back: 'Zurück'
       submit: 'Speichern'
   registrations:
     form:
@@ -58,6 +60,8 @@ de:
       user_phone: 'Telefon'
       user_fax: 'Fax (optional)'
       user_email: 'E-Mail-Adresse'
+      back_1: 'Zurück'
+      back_2: 'Zurück'
       submit: 'Speichern'
     edit:
       registration: 'Registrierung aktualisieren'
@@ -77,6 +81,7 @@ de:
       siimbyant: 'Siimbyant UG (haftungsbeschränkt)'
       address: 'Oranienstr. 183-184 Aufgang B'
       zipcode_and_city: '10999 Berlin'
+      back: 'Zurück'
     morequestions:
       morequestions: 'Weitere Fragen'
       morequestions_question: 'Möchten Sie weitere Fragen zu optionalen Umweltkennzahlen beantworten?'
