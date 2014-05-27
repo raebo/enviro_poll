@@ -2,13 +2,18 @@ class QuestionsController < ApplicationController
 
   def new
     session[:curr_ques] = params[:number].to_i
+    session[:curr_op_ques] = (session[:curr_ques] - 9)
     session[:next_ques] = (session[:curr_ques] + 1)
     session[:prev_ques] = (session[:curr_ques] - 1)
   	unless session[:first_time]
 	    session[:first_time] = "y"
 	  end
   	@survey_result = SurveyResult.new
-  	@sum_questions = Question.all.count # später noch ändern, sodass nur die 9 für obligatorische Fragen angezeigt wird und nicht alle Fragen (inkl. optionalen)
+  	if session[:curr_ques] <= 9
+      @sum_questions = 9 
+    else
+      @sum_questions = 32
+    end
   	@current_question = Question.find(params[:number])
     @results = Result.all
   end
@@ -21,11 +26,13 @@ class QuestionsController < ApplicationController
    
     if @survey_result.save
       session[:first_time] = "n"
-      if session[:curr_ques] < 9 # die 9 müsste hier noch durch die Anzahl der obligatorischen Fragen ersetzt werden (Question.all.count geht nicht da es später noch weitere (freiwillige) Fragen gibt)
-      redirect_to new_question_url(number: session[:next_ques])
+      if session[:curr_ques] == 9
+        redirect_to static_pages_morequestions_path
+      elsif session[:curr_ques] >= 41
+        redirect_to evaluation_index_path
+        session[:first_time] = "y"
       else
-      redirect_to static_pages_morequestions_path
-      session[:first_time] = "y"
+        redirect_to new_question_url(number: session[:next_ques])
       end
     else
       render action: :new
@@ -47,8 +54,7 @@ class QuestionsController < ApplicationController
     params.require(:survey_result).permit!
   end
 
-
-
   # am Ende der Fragen eine Variable (z.B. survey_done) auf true setzen, damit kann man dann unterscheiden ob man in den new oder edit Path gehen muss wenn der Nutzer die Umfrage startet
+  # session first time muss noch unterteilt werden für obligatorische und freiwillige Fragen, weil ein Nutzer auch nur die obligatorischen machen könnte und später dann die optionalen und da dürfte dann nicht edit view kommen sondern new
 
 end

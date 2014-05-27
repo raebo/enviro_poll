@@ -1,21 +1,26 @@
-<h1><%= t('.question') %> <%= session[:curr_ques] %> <%= t('.from') %> <%= @sum_questions %></h1>
+<h1><%= t('.question') %>
+<%= session[:curr_ques] if session[:curr_ques] <= 9 %>
+<%= session[:curr_op_ques] if session[:curr_ques] > 9 %>
+<%= t('.from') %>
+<%= @sum_questions %></h1>
 
 <h3> <%= @current_question.topic.topic_name %> - <%= @current_question.question_title %></h3>
 <p><%= @current_question.question_measurement %></p>
 
-<%= @param %>
-
-<%= f.radio_button :result_id, 1 %> <%= f.label :result_id, @results.find(1).result_name %></br>
-<%= f.radio_button :result_id, 2 %> <%= f.label :result_id, @results.find(2).result_name %></br>
-<%= f.radio_button :result_id, 3 %> <%= f.label :result_id, @results.find(3).result_name %></br>
-</br>
+<%= f.radio_button :result_id, 1 %> <%= f.label :result_id, @results.find(1).result_name %><br />
+<%= f.radio_button :result_id, 2 %> <%= f.label :result_id, @results.find(2).result_name %><br />
+<%= f.radio_button :result_id, 3 %> <%= f.label :result_id, @results.find(3).result_name %><br />
+<br />
 <div id="hiddenquestion">
-  <%= @current_question.question_description %></br>
-  <div class="setwidth"><%= f.text_field :value, class: 'form-control' %></div>
+  <%= @current_question.question_description %><br />
+  <div class="setwidth"><%= f.text_field :value, class: 'form-control' %></div><br />
 </div>
-</br>
-<%= link_to t('.back'), nace_codes_edit_path, class: "btn btn-default" if session[:curr_ques] == 1 %>
-<% if (session[:curr_ques] > 1) && (session[:curr_ques] <= 9) %>
+<p><span class="glyphicon glyphicon-info-sign"></span> <%= t('.info') %> <%= @current_question.calculation %></p>
+<% if session[:curr_ques] == 1 %>
+  <%= link_to t('.back'), static_pages_questions_info_path, class: "btn btn-default" %>
+<% elsif session[:curr_ques] == 10 %>
+  <%= link_to t('.back'), static_pages_morequestions_path, class: "btn btn-default" %>
+<% else %>  
   <%= link_to t('.back'), new_question_url(number: session[:prev_ques]), class: "btn btn-default" %>
 <% end %>
 <span class="pull-right visible-desktop">

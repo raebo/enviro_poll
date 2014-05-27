@@ -9,8 +9,7 @@ class NaceCodesController < ApplicationController
     @organisation = Organisation.find(session[:current_organisation_id])
 
     if (!params[:organisation].blank? && @organisation.update_attributes(organisation_params))
-      redirect_to new_question_url(number: 1)
-      # hier noch unterscheiden ob man in new oder edit path gehen muss
+      redirect_to static_pages_questions_info_path
     else
       flash.now[:notice] = t('.choose')
       @nace_codes = NaceCode

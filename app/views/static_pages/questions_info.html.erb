@@ -1,0 +1,73 @@
+<h1><%= t('.info') %></h1>
+<p><%= t('.forms_of_questions') %><p>
+<p><%= t('.irrelevant') %></p>	
+<p><%= t('.value') %><p>
+<p><%= t('.calculation') %></p>	
+<table border= "1" class="bases">
+  <tr>
+    <th>
+      Art der Organisation 
+    </th>
+    <th>
+      Bezugsgröße
+    </th>
+    <th>
+      Einheit 
+    </th>
+  </tr>
+  <tr>
+  	<td rowspan="2">
+  	  Produzierende Organisationen
+  	</td>
+  	<td>
+  	  Gesamtbruttowertschöpfung
+  	</td>
+  	<td>
+  	  Mio. Euro
+  	</td>
+  </tr>
+  <tr>
+  	<td>
+  	  Gesamtausbringungsmenge
+  	</td>
+  	<td>
+  	  Tonnen
+  	</td>
+  </tr>
+  <tr>
+  	<td rowspan="2">
+  	  Kleine produzierende Organisationen
+  	</td>
+  	<td>
+  	  Gesamtumsatz
+  	</td>
+  	<td>
+  	  Euro
+  	</td>
+  </tr>
+  <tr>
+    <td>
+      Anzahl der Mitarbeiter
+  	</td>
+  	<td>
+  	  Mitarbeiter/Personen
+  	</td>
+  </tr>
+  <tr>
+    <td>
+  	  Verwaltungen und Dienstleister
+  	</td>
+  	<td>
+  	  Anzahl der Mitarbeiter
+  	</td>
+  	<td>
+  	  Mitarbeiter/Personen
+  	</td>
+  </tr>
+</table>
+<br />
+<%= link_to t('.back'), nace_codes_edit_path, class: "btn btn-default" %>
+<span class="pull-right visible-desktop">
+<%= link_to t('.start'), new_question_url(number: 1), class: "btn btn-default" %>
+<!-- hier noch unterscheiden ob man in new oder edit gehen muss -->
+</span>

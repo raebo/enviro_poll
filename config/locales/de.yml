@@ -35,10 +35,18 @@ de:
       nace_code_edit: ' Sie können ihn jedoch editieren indem Sie einen neuen NACE-Code auswählen.'
     update:
       choose: 'Bitte wählen Sie einen NACE-Code aus.'
+  optional_questions:
+    question:
+      question: 'Frage'
+      from: 'von'
+      info: 'Die Kennzahl berechnet sich wie folgt:'
+      back: 'Zurück'
+      submit: 'Speichern'
   questions:
     question:
       question: 'Frage'
       from: 'von'
+      info: 'Die Kennzahl berechnet sich wie folgt:'
       back: 'Zurück'
       submit: 'Speichern'
   registrations:
@@ -85,3 +93,14 @@ de:
     morequestions:
       morequestions: 'Weitere Fragen'
       morequestions_question: 'Möchten Sie weitere Fragen zu optionalen Umweltkennzahlen beantworten?'
+      back: 'Zurück'
+      start: 'Ja'
+      evaluation: 'Nein'
+    questions_info:
+      info: 'Informationen zur Umfrage'
+      forms_of_questions: 'Diese Umfrage beinhaltet zwei Arten von Fragen: neun obligatorische Fragen zu den EMAS-Kernindikatoren (welche von EMAS-registrierten Organisationen angewendet werden müssen) und 32 weitere optionale Fragen. Die optionalen Fragen sind noch einmal unterteilt in Fragen die die Kernindikatoren um weitere Kennzahlen in den Schlüsselbereichen ergänzen und in Fragen zu typischen Organisationsbereichen. Mithilfe dieser freiwillig zu beantwortenden Fragen kann die Umweltleistung Ihrer Organisation noch detaillierter erfasst werden.'
+      irrelevant: 'Zwar sind die neun EMAS-Kernindikatoren obligatorisch, doch es gibt Fälle in denen die entsprechenden direkten Umweltaspekte Ihrer Organisation nicht wesentlich sind. Trifft dies für Ihre Organisation auf eine Kennzahl zu, so kann als Antwort "ist irrelevant" ausgewählt werden.'
+      value: 'Sobald Sie bei einer Frage angeben, dass diese Kennzahl von Ihrer Organisation erfasst wird, erscheint ein Feld in das Sie den erfassten Wert für diese Kennzahl eintragen können. Wenn Sie über mehrere Jahre hinweg an der Umfrage teilnehmen und die Werte Ihrer Organisation angeben, so erhalten Sie einen Überblick über die Entwicklung der Umweltleistung Ihrer Organisation im Laufe der Jahre.'
+      calculation: 'Um keine absoluten Zahlen verwenden zu müssen werden die meisten Werte mithilfe von relativen Kennzahlen erfasst. Das bedeutet, dass die absolute Zahl (der jährliche Input/Output bzw. die jährliche Auswirkung) durch eine Bezugsgröße geteilt wird. Ist keine eindeutige Bezugsgröße genannt, sieht die Formel für die Berechnung der Kennzahl vor durch eine organisationsabhängige Bezugsgröße zu dividieren. Welche Bezugsgröße von Ihrer Organisation gewählt werden sollte können Sie dieser Tabelle entnehmen:'
+      back: 'Zurück'
+      start: 'Weiter'

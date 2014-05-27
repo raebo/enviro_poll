@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140512151048) do
+ActiveRecord::Schema.define(version: 20140526123742) do
 
   create_table "nace_codes", force: true do |t|
     t.datetime "created_at"
@@ -19,6 +19,18 @@ ActiveRecord::Schema.define(version: 20140512151048) do
     t.string   "code"
     t.string   "description"
     t.string   "ancestry"
+  end
+
+  create_table "optional_questions", force: true do |t|
+    t.integer  "survey_id"
+    t.integer  "topic_id"
+    t.string   "question_title"
+    t.text     "question_description"
+    t.text     "question_measurement"
+    t.string   "unit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.text     "calculation"
   end
 
   create_table "organisation_surveys", force: true do |t|
@@ -57,6 +69,7 @@ ActiveRecord::Schema.define(version: 20140512151048) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "question_measurement"
+    t.text     "calculation"
   end
 
   create_table "results", force: true do |t|
