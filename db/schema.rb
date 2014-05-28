@@ -21,18 +21,6 @@ ActiveRecord::Schema.define(version: 20140526123742) do
     t.string   "ancestry"
   end
 
-  create_table "optional_questions", force: true do |t|
-    t.integer  "survey_id"
-    t.integer  "topic_id"
-    t.string   "question_title"
-    t.text     "question_description"
-    t.text     "question_measurement"
-    t.string   "unit"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.text     "calculation"
-  end
-
   create_table "organisation_surveys", force: true do |t|
     t.integer  "organisation_id"
     t.integer  "survey_id"
