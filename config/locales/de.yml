@@ -43,6 +43,8 @@ de:
       back: 'Zurück'
       submit: 'Speichern'
   questions:
+    create:
+      choose: 'Bitte wählen Sie eine Antwort aus.'
     question:
       question: 'Frage'
       from: 'von'

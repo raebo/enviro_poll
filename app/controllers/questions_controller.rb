@@ -18,13 +18,28 @@ class QuestionsController < ApplicationController
     @results = Result.all
   end
 
+  def edit
+    session[:curr_ques] = params[:number].to_i
+    session[:curr_op_ques] = (session[:curr_ques] - 9)
+    session[:next_ques] = (session[:curr_ques] + 1)
+    session[:prev_ques] = (session[:curr_ques] - 1)
+    @survey_result = SurveyResult.OrganisationSurvey.Organisation.find(params[:id]) # korrekt?
+    if session[:curr_ques] <= 9
+      @sum_questions = 9 
+    else
+      @sum_questions = 32
+    end
+    @current_question = Question.find(params[:number])
+    @results = Result.all
+  end
+
   def create
   	set_organisation_survey if session[:first_time] == "y"
     @survey_result = SurveyResult.new result_params
     @survey_result.organisation_survey_id = session[:current_organisation_survey_id]
     @survey_result.question_id = session[:curr_ques]
    
-    if @survey_result.save
+    if (!(params[:survey_result][:result_id].blank?) && @survey_result.save)
       session[:first_time] = "n"
       if session[:curr_ques] == 9
         redirect_to static_pages_morequestions_path
@@ -35,7 +50,28 @@ class QuestionsController < ApplicationController
         redirect_to new_question_url(number: session[:next_ques])
       end
     else
-      render action: :new
+      flash[:notice] = t('.choose')
+      redirect_to new_question_url(number: session[:curr_ques])
+    end
+  end
+
+  def update
+    @survey_result = SurveyResult.OrganisationSurvey.Organisation.find(params[:id]) # korrekt?
+    @survey_result.organisation_survey_id = session[:current_organisation_survey_id]
+    @survey_result.question_id = session[:curr_ques]
+   
+    if (!(params[:survey_result][:result_id].blank?) && @survey_result.update_attributes(result_params)) # korrekt?
+      if session[:curr_ques] == 9
+        redirect_to static_pages_morequestions_path
+      elsif session[:curr_ques] >= 41
+        redirect_to evaluation_index_path
+        session[:first_time] = "y" # nötig?
+      else
+        redirect_to new_question_url(number: session[:next_ques]) # hier zwischen new und edit unterscheiden?
+      end
+    else
+      flash[:notice] = t('.choose')
+      redirect_to edit_question_url(number: session[:curr_ques])
     end
   end
 
