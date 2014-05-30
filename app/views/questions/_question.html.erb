@@ -21,7 +21,7 @@
 <% elsif session[:curr_ques] == 10 %>
   <%= link_to t('.back'), static_pages_morequestions_path, class: "btn btn-default" %>
 <% else %>  
-  <%= link_to t('.back'), edit_question_url(@survey_result, number: session[:prev_ques]), class: "btn btn-default" %> <!-- hier Fehler: No route matches {:action=>"edit", :controller=>"questions", :number=>1} missing required keys: [:id] -->
+  <%= link_to t('.back'), edit_question_url(number: session[:prev_ques]), class: "btn btn-default" %> <!-- hier Fehler -->
 <% end %>
 <span class="pull-right visible-desktop">
 <%= f.submit t('.submit'), class: 'btn btn-default' %>

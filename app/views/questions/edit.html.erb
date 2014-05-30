@@ -1,4 +1,4 @@
-<%= form_for @survey_result, url: question_path(@organisation), html: {class: 'form-horizontal', role: 'form'} do |f| %>
+<%= form_for (@survey_result), html: {class: 'form-horizontal', role: 'form'} do |f| %>
 
 <%= render partial: 'question', locals: {f: f} %>
 

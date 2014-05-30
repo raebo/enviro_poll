@@ -23,7 +23,7 @@ class QuestionsController < ApplicationController
     session[:curr_op_ques] = (session[:curr_ques] - 9)
     session[:next_ques] = (session[:curr_ques] + 1)
     session[:prev_ques] = (session[:curr_ques] - 1)
-    @survey_result = SurveyResult.OrganisationSurvey.Organisation.find(params[:id]) # korrekt?
+    @survey_result = SurveyResult.find_by_organisation_survey_id(session[:current_organisation_survey_id]) # hier Fehler?
     if session[:curr_ques] <= 9
       @sum_questions = 9 
     else
@@ -56,7 +56,7 @@ class QuestionsController < ApplicationController
   end
 
   def update
-    @survey_result = SurveyResult.OrganisationSurvey.Organisation.find(params[:id]) # korrekt?
+    @survey_result = SurveyResult.find_by_organisation_survey_id(session[:current_organisation_survey_id]) # hier Fehler?
     @survey_result.organisation_survey_id = session[:current_organisation_survey_id]
     @survey_result.question_id = session[:curr_ques]
    
@@ -67,7 +67,7 @@ class QuestionsController < ApplicationController
         redirect_to evaluation_index_path
         session[:first_time] = "y" # nötig?
       else
-        redirect_to new_question_url(number: session[:next_ques]) # hier zwischen new und edit unterscheiden?
+        redirect_to new_question_url(number: session[:next_ques]) # hier zwischen new und edit unterscheiden
       end
     else
       flash[:notice] = t('.choose')

@@ -23,6 +23,8 @@ EnviroPoll::Application.routes.draw do
 
   resources :questions
 
+  resources :survey_results
+
   resources :dashboard do
     member do
       get 'authenticate'
