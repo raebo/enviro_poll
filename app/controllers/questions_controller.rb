@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
 
   def new
-    session[:curr_ques] = params[:number].to_i
+    session[:curr_ques] = params[:format].to_i
     session[:curr_op_ques] = (session[:curr_ques] - 9)
     session[:next_ques] = (session[:curr_ques] + 1)
     session[:prev_ques] = (session[:curr_ques] - 1)
@@ -14,22 +14,22 @@ class QuestionsController < ApplicationController
     else
       @sum_questions = 32
     end
-  	@current_question = Question.find(params[:number])
+  	@current_question = Question.find(params[:format])
     @results = Result.all
   end
 
   def edit
-    session[:curr_ques] = params[:number].to_i
+    session[:curr_ques] = params[:id].to_i
     session[:curr_op_ques] = (session[:curr_ques] - 9)
     session[:next_ques] = (session[:curr_ques] + 1)
     session[:prev_ques] = (session[:curr_ques] - 1)
-    @survey_result = SurveyResult.find_by_organisation_survey_id(session[:current_organisation_survey_id]) # hier Fehler?
+    @survey_result = SurveyResult.find_by_sql(["SELECT * FROM survey_results WHERE question_id = ? AND organisation_survey_id = ?", session[:curr_ques], session[:current_organisation_survey_id]]).first
     if session[:curr_ques] <= 9
       @sum_questions = 9 
     else
       @sum_questions = 32
     end
-    @current_question = Question.find(params[:number])
+    @current_question = Question.find(params[:id])
     @results = Result.all
   end
 
@@ -47,31 +47,29 @@ class QuestionsController < ApplicationController
         redirect_to evaluation_index_path
         session[:first_time] = "y"
       else
-        redirect_to new_question_url(number: session[:next_ques])
+        redirect_to new_question_path(session[:next_ques])
       end
     else
       flash[:notice] = t('.choose')
-      redirect_to new_question_url(number: session[:curr_ques])
+      redirect_to new_question_path(session[:curr_ques])
     end
   end
 
   def update
-    @survey_result = SurveyResult.find_by_organisation_survey_id(session[:current_organisation_survey_id]) # hier Fehler?
-    @survey_result.organisation_survey_id = session[:current_organisation_survey_id]
-    @survey_result.question_id = session[:curr_ques]
+    @survey_result = SurveyResult.find_by_sql(["SELECT * FROM survey_results WHERE question_id = ? AND organisation_survey_id = ?", session[:curr_ques], session[:current_organisation_survey_id]]).first
    
-    if (!(params[:survey_result][:result_id].blank?) && @survey_result.update_attributes(result_params)) # korrekt?
+    if @survey_result.update_attributes(result_params) # Fehler da find_by_sql Array zurückgibt aber save kein Array speichern kann
       if session[:curr_ques] == 9
         redirect_to static_pages_morequestions_path
       elsif session[:curr_ques] >= 41
         redirect_to evaluation_index_path
         session[:first_time] = "y" # nötig?
       else
-        redirect_to new_question_url(number: session[:next_ques]) # hier zwischen new und edit unterscheiden
+        redirect_to new_question_path(session[:next_ques]) # hier zwischen new und edit unterscheiden
       end
     else
       flash[:notice] = t('.choose')
-      redirect_to edit_question_url(number: session[:curr_ques])
+      redirect_to edit_question_path(session[:curr_ques])
     end
   end
 

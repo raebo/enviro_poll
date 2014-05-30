@@ -2,9 +2,9 @@
 <%= t('.morequestions_question') %>
 <br />
 <br />
-<%= link_to t('.back'), new_question_url(number: 9), class: "btn btn-default" %>
+<%= link_to t('.back'), edit_question_path(9), class: "btn btn-default" %>
 <span class="pull-right visible-desktop">
-<%= link_to t('.start'), new_question_url(number: 10), class: "btn btn-default" %>
+<%= link_to t('.start'), new_question_path(10), class: "btn btn-default" %>
 <%= link_to t('.evaluation'), evaluation_index_path, class: "btn btn-default" %>
 </span>
 

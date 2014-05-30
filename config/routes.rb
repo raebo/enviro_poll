@@ -23,7 +23,7 @@ EnviroPoll::Application.routes.draw do
 
   resources :questions
 
-  resources :survey_results
+  resources :survey_results, :controller => 'questions'
 
   resources :dashboard do
     member do
