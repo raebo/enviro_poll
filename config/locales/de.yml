@@ -4,11 +4,12 @@ de:
       dashboard_logged_in: 'Startseite'
       logged_in_1: 'Sie haben sich erfolgreich für die Organisation "'
       logged_in_2: '" angemeldet.'
-      start: 'Umfrage starten'
+      start_new: 'Neue Umfrage starten'
+      start_edit: 'Letzte Umfrage editieren'
     index:
       dashboard: 'Startseite'
       information_about_enviropoll: 'EnviroPoll ist eine Webanwendung, mit der Sie den Status des Umweltmanagements Ihrer Organisation überprüfen können. Hier folgt noch mehr Text.'
-      start: 'Umfrage starten'
+      start: 'Neue Umfrage starten'
   layouts:
     application:
       start: 'Startseite'

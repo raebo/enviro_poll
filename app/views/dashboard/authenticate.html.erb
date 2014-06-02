@@ -2,6 +2,10 @@
 
 <p><%= t('.logged_in_1') %><%= current_organisation.organisation_name %><%= t('.logged_in_2') %></p>
 
-<!-- place stuff from previous surveys here -->
+<!-- hier könnte noch etwas von vorherigen Umfragen gezeigt werden -->
 
-<%= link_to t('.start'), edit_registration_path, class: "btn btn-default" %>
+<%= link_to t('.start_new'), edit_registration_path, class: "btn btn-default" %>
+<% unless @organisation_survey.blank? %>
+  <%= link_to t('.start_edit'), edit_registration_path, class: "btn btn-default" %>
+<!-- nur wenn edit Button geklickt wird soll session[:edit_survey] = "y" gemacht werden, stattdessen wird aber sobald @organisation_survey nicht blank ist session[:edit_survey] auf y gesetzt -->
+<% end %>
