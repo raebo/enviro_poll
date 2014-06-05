@@ -1,5 +1,5 @@
 `$(document).ready(function(){
     $("#edit-button").click(function() {
-        $.post('/authenticate');
+        $.ajax({url: "authenticate/set_edit_var", type: "POST"});
     });
 });`

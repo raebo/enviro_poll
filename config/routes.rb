@@ -31,7 +31,7 @@ EnviroPoll::Application.routes.draw do
     end
   end
 
-  post '/authenticate', to: 'dashboard#set_edit_var'
+  post 'authenticate/set_edit_var'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
