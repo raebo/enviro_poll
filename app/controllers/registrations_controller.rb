@@ -24,7 +24,11 @@ class RegistrationsController < ApplicationController
   def update
     @organisation = Organisation.find(params[:id])
     if @organisation.update_attributes(organisation_params)
-      redirect_to nace_codes_edit_path
+      if params[:editsurvey] == "yes"
+        redirect_to nace_codes_edit_path(editsurvey: "yes")
+      else
+        redirect_to nace_codes_edit_path
+      end
     else
       render action: :edit
     end

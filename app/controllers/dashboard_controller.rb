@@ -11,8 +11,4 @@ class DashboardController < ApplicationController
     @organisation_survey = OrganisationSurvey.find_by_sql(["SELECT * FROM organisation_surveys WHERE organisation_id = ?", session[:current_organisation_id]])
   end
 
-  def set_edit_var
-    session[:edit_survey] = "y"
-  end
-
 end
