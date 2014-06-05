@@ -3,6 +3,7 @@
 <%= content_tag :div, t('.nace_code_chosen') + @organisation.nace_code.code + " (" + @organisation.nace_code.description + ")." unless @organisation.nace_code_id.blank? %>
 <%= content_tag :div, t('.nace_code_edit') unless @organisation.nace_code_id.blank? %>
 </br>
+
 <%= form_for @organisation, url: nace_code_path(@organisation), html: {class: 'form-horizontal', role: 'form'} do |f| %>
 
  <%= render partial: 'form', locals: {f: f} %>
