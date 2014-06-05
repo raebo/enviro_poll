@@ -68,6 +68,8 @@
 <br />
 <%= link_to t('.back'), nace_codes_edit_path, class: "btn btn-default" %>
 <span class="pull-right visible-desktop">
+
+
 <% if session[:edit_survey] == "y" %>
   <%= link_to t('.start'), edit_question_path(1), class: "btn btn-default" %>
 <% else %>  
